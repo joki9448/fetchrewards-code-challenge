@@ -1,12 +1,20 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function Form () {
+    const [occupations, setOccupations] = useState([]);
+    const [states, setStates] = useState([]);
+
+    const requestOccupations = async () => {
+        let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
+        let res = await req.json();
+        console.log('occupations: ', res.occupations);
+    }
     
     return (
         <section className="form-section">
             <h1>This is the form</h1>
-            <form className="form" onSubmit="">
+            {/* <form className="form" onSubmit="">
                 <label for="fullname">Full Name:</label>
                 <input></input>
 
@@ -23,7 +31,7 @@ function Form () {
                 <input></input>
 
                 <button>Submit</button>
-            </form>
+            </form> */}
         </section>
     )
 }
