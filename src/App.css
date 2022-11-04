@@ -1,8 +1,21 @@
 /* #2F0C38 - purple */
 /* #F8A619 - gold */
 
-section {
+.form-section {
   background: #000000;
   height: 90vh;
+}
+.form-section h2 {
+  color: white;
+}
+
+.form {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 20vw;
+  position: relative;
+  align-items: center;
 }
 

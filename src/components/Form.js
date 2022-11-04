@@ -57,9 +57,9 @@ function Form() {
 
     return (
         <section className="form-section">
-            <h1>This is the form</h1>
 
             <form className="form" onSubmit={handleSubmit}>
+                <h2>This is the form</h2>
                 <label for="fullname">Full Name:</label>
                 <input type="text" onChange={(e) => setName(e.target.value)} value={name}></input>
 
