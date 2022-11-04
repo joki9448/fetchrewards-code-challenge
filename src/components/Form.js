@@ -44,6 +44,10 @@ function Form() {
                 state: state
             })
         });
+        if (req.status === 201) {
+            alert('Successfully submitted!')
+        } else 
+            alert('Submission failed!')
     }
 
     return (
