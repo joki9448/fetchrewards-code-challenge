@@ -58,11 +58,11 @@ function Form() {
                 <label for="fullname">Full Name:</label>
                 <input type="text" onChange={(e) => setName(e.target.value)} value={name}></input>
 
-                <label for="email" onChange={(e) => setEmail(e.target.value)} value={email}>Email Address:</label>
-                <input type="email"></input>
+                <label for="email">Email Address:</label>
+                <input type="email" onChange={(e) => setEmail(e.target.value)} value={email}></input>
 
-                <label for="password" onChange={(e) => setPassword(e.target.value)} value={password}>Password:</label>
-                <input type="password"></input>
+                <label for="password">Password:</label>
+                <input type="password" onChange={(e) => setPassword(e.target.value)} value={password}></input>
 
                 <label for="occupation">Occupation:</label>
                 <button type="button" onClick={() => {
@@ -71,7 +71,11 @@ function Form() {
                 }}>
                     Select Occupation
                 </button>
-                {isJobsListVisible ? <JobsList jobs={jobsList}/> : null}
+                {isJobsListVisible ? <JobsList 
+                    jobsList={jobsList} 
+                    setJob={setJob} 
+                    setIsJobsListVisible={setIsJobsListVisible}/> 
+                : null}
 
                 <label for="state">State:</label>
                 <button type="button" onClick={() => {
@@ -80,7 +84,11 @@ function Form() {
                 }}>
                     Select State
                 </button>
-                {isStatesListVisible ? <StatesList states={statesList}/> : null}
+                {isStatesListVisible ? <StatesList 
+                    statesList={statesList} 
+                    setState={setState} 
+                    setIsStatesListVisible={setIsStatesListVisible}/> 
+                : null}
 
                 <button type="submit">Submit</button>
             </form>
