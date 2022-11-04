@@ -20,13 +20,16 @@ body {
   align-items: center;
   margin: auto;
   padding: 2% 0% 3% 0%;
-  top: 13vh;
+  top: 10vh;
 }
 .form h2 {
   background: #2F0C38;
   letter-spacing: 3px;
   border: 5px double #F8A619;
   padding: 2%;
+}
+.form label {
+  letter-spacing: 1px;
 }
 .form input {
   padding: 1%;
@@ -35,10 +38,17 @@ body {
 }
 .form button {
   cursor: pointer;
+  background: #F8A619;
   border: none;
-  margin: 1%;
-  padding: 1%;
+  margin: 2%;
+  padding: 1.5%;
   width: 25%;
+  color: white;
+  font-weight: bold;
+}
+.form button:hover {
+  background: #2F0C38;
+  color: white;
 }
 
 
