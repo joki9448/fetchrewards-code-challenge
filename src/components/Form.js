@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
-import JobsList from './menu-components/JobsList';
+import OccupationsList from './menu-components/OccupationsList';
 import StatesList from './menu-components/StatesList';
 
 function Form() {
     // useState for form object
     const [name, setName] = useState('');
+    console.log('form name', name)
     const [email, setEmail] = useState('');
+    console.log('form email', email)
     const [password, setPassword] = useState('');
-    const [job, setJob] = useState('');
+    console.log('form password', password)
+    const [occupation, setOccupation] = useState('');
+    console.log('form job', occupation)
     const [state, setState] = useState('');
-    console.log('state state', state)
+    console.log('form state', state)
 
     // useState for dropdown menus
-    const [jobsList, setJobsList] = useState([]);
+    const [occupationsList, setOccupationsList] = useState([]);
     const [statesList, setStatesList] = useState([]);
-    const [isJobsListVisible, setIsJobsListVisible] = useState(false);
+    const [isOccsListVisible, setIsOccsListVisible] = useState(false);
     const [isStatesListVisible, setIsStatesListVisible] = useState(false);
      
     // Occupations and States GET requests
     const requestOccupations = async () => {
         let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
         let res = await req.json();
-        setJobsList(res.occupations)
+        setOccupationsList(res.occupations)
     }
     const requestStates = async () => {
         let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
@@ -41,12 +45,12 @@ function Form() {
                 name: name,
                 email: email,
                 password: password,
-                job: job,
+                occupation: occupation,
                 state: state
             })
         });
         if (req.status === 201) {
-            alert('Successfully submitted!')
+            alert('Submission successful!')
         } else 
             alert('Submission failed!')
     }
@@ -68,14 +72,14 @@ function Form() {
                 <label for="occupation">Occupation:</label>
                 <button type="button" onClick={() => {
                     requestOccupations()
-                    setIsJobsListVisible(true)
+                    setIsOccsListVisible(true)
                 }}>
                     Select Occupation
                 </button>
-                {isJobsListVisible ? <JobsList 
-                    jobsList={jobsList} 
-                    setJob={setJob} 
-                    setIsJobsListVisible={setIsJobsListVisible}/> 
+                {isOccsListVisible ? <OccupationsList 
+                    occupationsList={occupationsList} 
+                    setOccupation={setOccupation} 
+                    setIsOccsListVisible={setIsOccsListVisible}/> 
                 : null}
 
                 <label for="state">State:</label>
