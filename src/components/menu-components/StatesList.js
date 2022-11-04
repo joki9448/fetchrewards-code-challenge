@@ -1,13 +1,14 @@
 import StateItems from './StateItems';
 
-function StatesList({states}) {
-    console.log('state items', states)
+function StatesList({statesList, setState, setIsStatesListVisible}) {
+    console.log('state items', statesList)
     return (
-        <div>
+        <div className="states-list-container">
             <h1>This is the states list</h1>
-            {states.map((e) => {
-                return <StateItems stateItems={e}/>
+            {statesList.map((e) => {
+                return <StateItems stateItems={e} setState={setState}/>
             })}
+            <button type="button" className="close-states-list-btn" onClick={() => setIsStatesListVisible(false)}>x</button>
         </div>
     )
 }

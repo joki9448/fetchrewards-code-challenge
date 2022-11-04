@@ -9,6 +9,7 @@ function Form() {
     const [password, setPassword] = useState('');
     const [job, setJob] = useState('');
     const [state, setState] = useState('');
+    console.log('state state', state)
 
     // useState for dropdown menus
     const [jobsList, setJobsList] = useState([]);

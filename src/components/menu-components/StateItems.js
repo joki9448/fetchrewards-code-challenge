@@ -1,6 +1,8 @@
-function StateItems({stateItems}) {
+function StateItems({stateItems, setState}) {
     return (
-        <div></div>
+        <div className="state-items" onClick={(e) => setState(e.target.textContent)}>
+            {stateItems.name} - {stateItems.abbreviation}
+        </div>
     )
 }
 
