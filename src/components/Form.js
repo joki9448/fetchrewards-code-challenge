@@ -55,16 +55,16 @@ function Form() {
             <form className="form" onSubmit={handleSubmit}>
                 <h2>Tell Us About Yourself!</h2>
                 <label for="fullname">Full Name:</label>
-                <input type="text" onChange={(e) => setName(e.target.value)} value={name}></input>
+                <input type="text" onChange={(e) => setName(e.target.value)} value={name} name="fullname" required></input>
 
                 <label for="email">Email Address:</label>
-                <input type="email" onChange={(e) => setEmail(e.target.value)} value={email}></input>
+                <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} name="email" required></input>
 
                 <label for="password">Password:</label>
-                <input type="password" onChange={(e) => setPassword(e.target.value)} value={password}></input>
+                <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} name="password" required></input>
 
                 <label for="occupation">Occupation: {occupation}</label>
-                <button type="button" className="menu-btn" onClick={() => {
+                <button type="button" className="menu-btn" name="occupation" onClick={() => {
                     requestOccupations()
                     setIsOccsListVisible(true)
                 }}>
@@ -77,7 +77,7 @@ function Form() {
                 : null}
 
                 <label for="state">State: {state}</label>
-                <button type="button" className="menu-btn" onClick={() => {
+                <button type="button" className="menu-btn" name="state" onClick={() => {
                     requestStates()
                     setIsStatesListVisible(true);
                 }}>

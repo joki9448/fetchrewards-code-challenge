@@ -23,7 +23,7 @@ body {
 
 /* Form */
 .form-section {
-  background: #000000;
+  background: linear-gradient(270deg, white, #2F0C38);
   height: 90vh;
   overflow: hidden;
 }
@@ -37,7 +37,7 @@ body {
   align-items: center;
   margin: auto;
   padding: 2% 0% 3% 0%;
-  top: 10vh;
+  top: 8vh;
 }
 .form h2 {
   background: #2F0C38;
