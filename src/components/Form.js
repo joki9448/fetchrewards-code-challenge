@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import JobsList from './menu-components/JobsList';
+import StatesList from './menu-components/StatesList';
 
-function Form () {
+function Form() {
     // useState for form object
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -65,7 +67,7 @@ function Form () {
                 }}>
                     Select Occupation
                 </button>
-                {isJobsListVisible ? jobsList : null}
+                {isJobsListVisible ? <JobsList jobs={jobsList}/> : null}
 
                 <label for="state">State:</label>
                 <button type="button" onClick={() => {
@@ -74,7 +76,7 @@ function Form () {
                 }}>
                     Select State
                 </button>
-                {isStatesListVisible ? statesList : null}
+                {isStatesListVisible ? <StatesList states={statesList}/> : null}
 
                 <button type="submit">Submit</button>
             </form>
