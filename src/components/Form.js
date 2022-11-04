@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import OccupationsList from './OccupationsList';
 
 function Form () {
-    // useState 
+    // useState for form object
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -49,12 +49,12 @@ function Form () {
 
             <form className="form" onSubmit={handleSubmit}>
                 <label for="fullname">Full Name:</label>
-                <input type="text" onChange={(e) => console.log(e.target.value)}></input>
+                <input type="text" onChange={(e) => setName(e.target.value)} value={name}></input>
 
-                <label for="email" onChange={(e) => console.log(e.target.value)}>Email Address:</label>
+                <label for="email" onChange={(e) => setEmail(e.target.value)} value={email}>Email Address:</label>
                 <input type="email"></input>
 
-                <label for="password" onChange={(e) => console.log(e.target.value)}>Password:</label>
+                <label for="password" onChange={(e) => setPassword(e.target.value)} value={password}>Password:</label>
                 <input type="password"></input>
 
                 <label for="occupation">Occupation:</label>
