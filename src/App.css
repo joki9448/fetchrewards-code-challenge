@@ -4,6 +4,7 @@ body {
   font-family: 'Coustard', serif;
 }
 
+/* Header */
 .header {
   display: flex;
   flex-direction: row;
@@ -84,3 +85,34 @@ body {
   border: 5px double #2F0C38;
 }
 
+/* Occupations Drop-down Menu */
+.occupations-list-container {
+  border: 3px solid #F8A619;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #2F0C38;
+  color: #F8A619;
+  padding: 5%;
+}
+.close-occ-list-btn {
+  cursor: pointer;
+  position: absolute;
+  border: none;
+  background: none;
+  font-size: 30px;
+  color: white;
+  top: 0;
+  right: 0;
+  margin-right: 3%;
+}
+.occupation-items {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 3px;
+}
+.occupation-items:hover {
+  background: white;
+  color: #2F0C38;
+}
