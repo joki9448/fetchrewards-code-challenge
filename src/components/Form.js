@@ -10,6 +10,11 @@ function Form () {
         let res = await req.json();
         console.log('occupations: ', res.occupations);
     }
+    const requestStates = async () => {
+        let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
+        let res = await req.json();
+        console.log('states: ', res.states);
+    }
     
     return (
         <section className="form-section">
