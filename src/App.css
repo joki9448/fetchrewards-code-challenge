@@ -4,22 +4,41 @@ body {
   font-family: 'Coustard', serif;
 }
 
+/* Form */
 .form-section {
   background: #000000;
   height: 90vh;
 }
-
 .form {
-  border: 1px solid white;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: #F8A619;
   /* height: 70vh; */
   width: 35vw;
   position: relative;
   align-items: center;
   margin: auto;
   padding: 2% 0% 3% 0%;
-  top: 15vh;
+  top: 13vh;
 }
+.form h2 {
+  background: #2F0C38;
+  letter-spacing: 3px;
+  border: 5px double #F8A619;
+  padding: 2%;
+}
+.form input {
+  padding: 1%;
+  width: 45%;
+  margin: 1%;
+}
+.form button {
+  cursor: pointer;
+  border: none;
+  margin: 1%;
+  padding: 1%;
+  width: 25%;
+}
+
 
