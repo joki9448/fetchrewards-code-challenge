@@ -8,9 +8,18 @@ function OccupationsList({
 
     return (
         <div className="occupations-list-container">
-            <button type="button" className="close-occ-list-btn" onClick={() => {setIsOccsListVisible(false)}}>x</button>
+            <button 
+                type="button" 
+                className="close-occ-list-btn" 
+                onClick={() => {setIsOccsListVisible(false)}}>
+                    x
+            </button>
             {occupationsList.map((e) => {
-                return <OccupationItems occupationItems={e} setOccupation={setOccupation}/>
+                return <OccupationItems 
+                    occupationItems={e} 
+                    setOccupation={setOccupation}
+                    setIsOccsListVisible={setIsOccsListVisible}
+                />
             })}
         </div>
     )
