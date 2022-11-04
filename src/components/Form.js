@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import OccupationsList from './OccupationsList';
 
 function Form () {
     // useState for form object
@@ -10,19 +9,21 @@ function Form () {
     const [state, setState] = useState('');
 
     // useState for dropdown menus
-    const [occupations, setOccupations] = useState([]);
-    const [states, setStates] = useState([]);
+    const [jobsList, setJobsList] = useState([]);
+    const [statesList, setStatesList] = useState([]);
+    const [isJobsListVisible, setIsJobsListVisible] = useState(false);
+    const [isStatesListVisible, setIsStatesListVisible] = useState(false);
      
     // Occupations and States GET requests
     const requestOccupations = async () => {
         let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
         let res = await req.json();
-        setOccupations(res.occupations)
+        setJobsList(res.occupations)
     }
     const requestStates = async () => {
         let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
         let res = await req.json();
-        setStates(res.states);
+        setStatesList(res.states);
     }
 
     // Form Submit
@@ -58,10 +59,22 @@ function Form () {
                 <input type="password"></input>
 
                 <label for="occupation">Occupation:</label>
-                <button type="button" onClick={requestOccupations}>Request Occupations</button>
+                <button type="button" onClick={() => {
+                    requestOccupations()
+                    setIsJobsListVisible(true)
+                }}>
+                    Select Occupation
+                </button>
+                {isJobsListVisible ? jobsList : null}
 
                 <label for="state">State:</label>
-                <button type="button" onClick={requestStates}>Request States</button>
+                <button type="button" onClick={() => {
+                    requestStates()
+                    setIsStatesListVisible(true);
+                }}>
+                    Select State
+                </button>
+                {isStatesListVisible ? statesList : null}
 
                 <button type="submit">Submit</button>
             </form>
