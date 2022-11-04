@@ -5,12 +5,18 @@ body {
 }
 
 .header {
-  position: relative;
-  box-shadow: 0 5px 5px white;
+  display: flex;
+  flex-direction: row;
 }
-header img {
+.header img {
   width: 15%;
   padding: 1%;
+}
+.header h2 {
+  letter-spacing: 2px;
+  position: relative;
+  left: 70%;
+  font-size: 30px;
 }
 
 /* Form */
@@ -29,7 +35,6 @@ header img {
   margin: auto;
   padding: 2% 0% 3% 0%;
   top: 10vh;
-  box-shadow: 0px 0px 3px 3px white;
 }
 .form h2 {
   background: #2F0C38;
