@@ -19,6 +19,8 @@ function Form () {
     return (
         <section className="form-section">
             <h1>This is the form</h1>
+            <button onClick={requestOccupations}>Request Occupations</button>
+            <button onClick={requestStates}>Request States</button>
             {/* <form className="form" onSubmit="">
                 <label for="fullname">Full Name:</label>
                 <input></input>
