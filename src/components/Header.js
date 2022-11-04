@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header className="header">
-            <h1>This is the header</h1>
+            <img src="fetchlogo.jpg" alt="logo"></img>
         </header>
     )
 }

@@ -4,6 +4,15 @@ body {
   font-family: 'Coustard', serif;
 }
 
+.header {
+  position: relative;
+  box-shadow: 0 5px 5px white;
+}
+header img {
+  width: 15%;
+  padding: 1%;
+}
+
 /* Form */
 .form-section {
   background: #000000;
@@ -13,20 +22,21 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  color: #F8A619;
-  /* height: 70vh; */
+  color: #2F0C38;
   width: 35vw;
   position: relative;
   align-items: center;
   margin: auto;
   padding: 2% 0% 3% 0%;
   top: 10vh;
+  box-shadow: 0px 0px 3px 3px white;
 }
 .form h2 {
   background: #2F0C38;
+  color: #F8A619;
   letter-spacing: 3px;
   border: 5px double #F8A619;
-  padding: 2%;
+  padding: 2% 5% 2% 5%;
 }
 .form label {
   letter-spacing: 1px;
@@ -47,6 +57,7 @@ body {
   color: white;
   font-weight: bold;
 }
+
 .menu-btn:hover {
   background: #2F0C38;
   color: white;
@@ -55,10 +66,11 @@ body {
   cursor: pointer;
   background: #2F0C38;
   border: 5px double #F8A619;
-  padding: 2%;
+  padding: 2% 5% 2% 5%;
   margin-top: 5%;
-  width: 25%;
-  color: #F8A619;;
+  /* width: 25%; */
+  color: #F8A619;
+  font-size: 15px;
   font-weight: bold;
 }
 .submit-btn:hover {
