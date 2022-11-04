@@ -30,25 +30,40 @@ body {
 }
 .form label {
   letter-spacing: 1px;
+  font-weight: bold;
 }
 .form input {
   padding: 1%;
   width: 45%;
   margin: 1%;
 }
-.form button {
+.menu-btn {
   cursor: pointer;
   background: #F8A619;
   border: none;
   margin: 2%;
   padding: 1.5%;
-  width: 25%;
+  width: 30%;
   color: white;
   font-weight: bold;
 }
-.form button:hover {
+.menu-btn:hover {
   background: #2F0C38;
   color: white;
 }
-
+.submit-btn {
+  cursor: pointer;
+  background: #2F0C38;
+  border: 5px double #F8A619;
+  padding: 2%;
+  margin-top: 5%;
+  width: 25%;
+  color: #F8A619;;
+  font-weight: bold;
+}
+.submit-btn:hover {
+  background: white;
+  color: #2F0C38;
+  border: 5px double #2F0C38;
+}
 

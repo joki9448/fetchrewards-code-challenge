@@ -64,7 +64,7 @@ function Form() {
                 <input type="password" onChange={(e) => setPassword(e.target.value)} value={password}></input>
 
                 <label for="occupation">Occupation: {occupation}</label>
-                <button type="button" onClick={() => {
+                <button type="button" className="menu-btn" onClick={() => {
                     requestOccupations()
                     setIsOccsListVisible(true)
                 }}>
@@ -77,7 +77,7 @@ function Form() {
                 : null}
 
                 <label for="state">State: {state}</label>
-                <button type="button" onClick={() => {
+                <button type="button" className="menu-btn" onClick={() => {
                     requestStates()
                     setIsStatesListVisible(true);
                 }}>
@@ -89,7 +89,7 @@ function Form() {
                     setIsStatesListVisible={setIsStatesListVisible}/> 
                 : null}
 
-                <button type="submit">Submit</button>
+                <button type="submit" className="submit-btn">Submit</button>
             </form>
         </section>
     )
