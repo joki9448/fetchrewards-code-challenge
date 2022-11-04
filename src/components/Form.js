@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import Occupations from './Occupations';
 
 function Form () {
+    // useState
     const [occupations, setOccupations] = useState([]);
     const [states, setStates] = useState([]);
-    // console.log('occupations useState:', occupations)
-    // console.log('states useState:', states)
 
+    const []
+    
+    // Occupations and States GET requests
     const requestOccupations = async () => {
         let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
         let res = await req.json();
@@ -17,22 +19,34 @@ function Form () {
         let res = await req.json();
         setStates(res.states);
     }
-    
+
+    // Form Submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        let req = await fetch('https://frontend-take-home.fetchrewards.com/form', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify()
+        });
+    }
+
     return (
         <section className="form-section">
             <h1>This is the form</h1>
             {/* <button onClick={requestOccupations}>Request Occupations</button>
             <button onClick={requestStates}>Request States</button> */}
 
-            {/* <form className="form" onSubmit="">
+            <form className="form" onSubmit={handleSubmit}>
                 <label for="fullname">Full Name:</label>
-                <input></input>
+                <input type="text"></input>
 
                 <label for="email">Email Address:</label>
-                <input></input>
+                <input type="email"></input>
 
                 <label for="password">Password:</label>
-                <input></input>
+                <input type="password"></input>
 
                 <label for="occupation">Occupation:</label>
                 <input></input>
@@ -41,7 +55,7 @@ function Form () {
                 <input></input>
 
                 <button>Submit</button>
-            </form> */}
+            </form>
         </section>
     )
 }
