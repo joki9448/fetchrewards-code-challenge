@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import Occupations from './Occupations';
+import OccupationsList from './OccupationsList';
 
 function Form () {
-    // useState
+    // useState 
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [job, setJob] = useState('');
+    const [state, setState] = useState('');
+
+    // useState for dropdown menus
     const [occupations, setOccupations] = useState([]);
     const [states, setStates] = useState([]);
-
-    const []
-    
+     
     // Occupations and States GET requests
     const requestOccupations = async () => {
         let req = await fetch('https://frontend-take-home.fetchrewards.com/form');
@@ -28,33 +33,37 @@ function Form () {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify()
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: password,
+                job: job,
+                state: state
+            })
         });
     }
 
     return (
         <section className="form-section">
             <h1>This is the form</h1>
-            {/* <button onClick={requestOccupations}>Request Occupations</button>
-            <button onClick={requestStates}>Request States</button> */}
 
             <form className="form" onSubmit={handleSubmit}>
                 <label for="fullname">Full Name:</label>
-                <input type="text"></input>
+                <input type="text" onChange={(e) => console.log(e.target.value)}></input>
 
-                <label for="email">Email Address:</label>
+                <label for="email" onChange={(e) => console.log(e.target.value)}>Email Address:</label>
                 <input type="email"></input>
 
-                <label for="password">Password:</label>
+                <label for="password" onChange={(e) => console.log(e.target.value)}>Password:</label>
                 <input type="password"></input>
 
                 <label for="occupation">Occupation:</label>
-                <input></input>
+                <button type="button" onClick={requestOccupations}>Request Occupations</button>
 
                 <label for="state">State:</label>
-                <input></input>
+                <button type="button" onClick={requestStates}>Request States</button>
 
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </section>
     )
