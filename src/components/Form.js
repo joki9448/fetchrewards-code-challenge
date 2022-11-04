@@ -5,15 +5,10 @@ import StatesList from './menu-components/StatesList';
 function Form() {
     // useState for form object
     const [name, setName] = useState('');
-    console.log('form name', name)
     const [email, setEmail] = useState('');
-    console.log('form email', email)
     const [password, setPassword] = useState('');
-    console.log('form password', password)
     const [occupation, setOccupation] = useState('');
-    console.log('form job', occupation)
     const [state, setState] = useState('');
-    console.log('form state', state)
 
     // useState for dropdown menus
     const [occupationsList, setOccupationsList] = useState([]);
@@ -57,7 +52,6 @@ function Form() {
 
     return (
         <section className="form-section">
-
             <form className="form" onSubmit={handleSubmit}>
                 <h2>This is the form</h2>
                 <label for="fullname">Full Name:</label>
