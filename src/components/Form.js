@@ -63,7 +63,7 @@ function Form() {
                 <label for="password">Password:</label>
                 <input type="password" onChange={(e) => setPassword(e.target.value)} value={password}></input>
 
-                <label for="occupation">Occupation:</label>
+                <label for="occupation">Occupation: {occupation}</label>
                 <button type="button" onClick={() => {
                     requestOccupations()
                     setIsOccsListVisible(true)
@@ -76,7 +76,7 @@ function Form() {
                     setIsOccsListVisible={setIsOccsListVisible}/> 
                 : null}
 
-                <label for="state">State:</label>
+                <label for="state">State: {state}</label>
                 <button type="button" onClick={() => {
                     requestStates()
                     setIsStatesListVisible(true);
