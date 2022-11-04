@@ -53,7 +53,7 @@ function Form() {
     return (
         <section className="form-section">
             <form className="form" onSubmit={handleSubmit}>
-                <h2>Tell Us About Yourself!</h2>
+                <h2>Register Your Account</h2>
                 <label for="fullname">Full Name:</label>
                 <input type="text" onChange={(e) => setName(e.target.value)} value={name} name="fullname" required></input>
 
